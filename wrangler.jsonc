@@ -15,16 +15,6 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS",
   },
-  "routes": [
-    {
-      "pattern": "your-domain.hu/*",
-      "zone_name": "your-domain.hu"
-    },
-    {
-      "pattern": "www.your-domain.hu/*",
-      "zone_name": "your-domain.hu"
-    }
-  ],
   "d1_databases": [
     {
       "binding": "D1",
