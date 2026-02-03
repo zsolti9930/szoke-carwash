@@ -80,6 +80,20 @@ This will spin up Wrangler in `production` mode, run any created migrations, bui
 
 That's it! You can if you wish move these steps into your CI pipeline as well.
 
+## Custom domain (optional)
+
+If you don't have a custom domain yet, Cloudflare will still publish your Worker on the
+default `*.workers.dev` URL after deployment. When you do have a domain, add a `routes`
+entry to `wrangler.jsonc` that points your hostname(s) to this Worker, for example:
+
+```jsonc
+// wrangler.jsonc
+"routes": [
+  { "pattern": "your-domain.hu/*", "zone_name": "your-domain.hu" },
+  { "pattern": "www.your-domain.hu/*", "zone_name": "your-domain.hu" }
+]
+```
+
 ## Enabling logs
 
 By default logs are not enabled for your API, we've made this decision because it does run against your quota so we've left it opt-in. But you can easily enable logs in one click in the Cloudflare panel, [see docs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs).
